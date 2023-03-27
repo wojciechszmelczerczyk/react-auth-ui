@@ -5,6 +5,11 @@ module.exports = {
     extend: {
       colors: {
         pink: "#FFF3F0",
+        orange_form: "#F47458",
+        orange_input: "#FFF6F4",
+      },
+      fontFamily: {
+        poppins: ["Poppins"],
       },
     },
   },
