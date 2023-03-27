@@ -37,7 +37,7 @@ const AuthForm = () => {
         </div>
       </div>
       <div className='flex flex-col gap-y-10 grow items-center justify-center'>
-        <button className='flex text-white justify-center bg-orange_form rounded-3xl w-36 h-12 shadow-xl'>
+        <button className='flex text-white justify-center bg-orange_form hover:bg-hover_orange_form rounded-3xl w-36 h-12 shadow-xl'>
           <p className='font-poppins font-semibold mx-3 self-center text-md'>
             SIGN IN
           </p>
@@ -49,7 +49,10 @@ const AuthForm = () => {
         </button>
         <span className='font-poppins opacity-50'>
           Don't have an account?
-          <a href='' className='mx-1 text-orange_form opacity-100'>
+          <a
+            href=''
+            className='mx-1 text-orange_form hover:text-hover_orange_form opacity-100'
+          >
             Sign up
           </a>
         </span>
