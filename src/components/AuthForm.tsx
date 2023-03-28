@@ -1,12 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import arrowOutlined from "../img/ant-design_swap-left-outlined.svg";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import { signup, signin } from "../services/AuthService";
 
 const AuthForm = ({ isLogin }: any) => {
-  const { user, setUser } = useContext(AuthContext);
   const [emailError, setEmailError] = useState<any>();
   const [passwordError, setPasswordError] = useState<any>();
   const [email, setEmail] = useState<any>();
@@ -21,18 +19,19 @@ const AuthForm = ({ isLogin }: any) => {
         ? await signin(email, password)
         : await signup(email, password);
 
-      // if email exists, it mean user was signed up properly
-      if (res.data.email) {
-        // set context with user email
-        setUser(res.data.email);
-
+      // if user id exists, it mean user was signed up properly
+      if (res.data._id) {
         // redirect to signin page
         navigate("/signin");
 
         // if jsonwebtoken is returned, set user as logged in and redirect to homepage
       } else if (res.data.jwt) {
+        // add jwt to local storage
+        localStorage.setItem("email", res.data.email);
+        localStorage.setItem("jwt", res.data.jwt);
+
         // redirect to main page
-        navigate(`/homepage/${user}`);
+        navigate(`/homepage/${res.data.email}`);
       }
       // otherwise catch an error message and assign to error state
     } catch (err: any) {
