@@ -5,6 +5,7 @@ function App() {
   let element = useRoutes([
     { path: "/", element: <Navigate to='/signin' /> },
     { path: "/signin", element: <LoginPage /> },
+    { path: "/signup", element: <LoginPage /> },
   ]);
 
   return element;
