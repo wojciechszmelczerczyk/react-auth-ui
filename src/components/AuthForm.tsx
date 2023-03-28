@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import arrowOutlined from "../img/ant-design_swap-left-outlined.svg";
 import { NavLink } from "react-router-dom";
 import { signup, signin } from "../services/AuthService";
 
-const AuthForm = ({ isLogin }: any) => {
+const AuthForm = ({ accountExist }: any) => {
   const [emailError, setEmailError] = useState<any>();
   const [passwordError, setPasswordError] = useState<any>();
   const [email, setEmail] = useState<any>();
@@ -12,10 +12,19 @@ const AuthForm = ({ isLogin }: any) => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // if jwt exists in local storage redirect to user homepage
+    if (localStorage.getItem("jwt")) {
+      const email = localStorage.getItem("email");
+      navigate(`/homepage/${email}`);
+    }
+  });
+
   const onSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const res = isLogin
+      // functionialty is dependent on flag
+      const res = accountExist
         ? await signin(email, password)
         : await signup(email, password);
 
@@ -70,7 +79,7 @@ const AuthForm = ({ isLogin }: any) => {
           Welcome back !!!
         </h2>
         <h1 className='font-poppins font-semibold md:text-3xl lg:text-4xl 2xl:text-6xl'>
-          {isLogin ? "Sign in" : "Sign up"}
+          {accountExist ? "Sign in" : "Sign up"}
         </h1>
       </div>
       <div className='flex flex-col gap-y-10 pt-10'>
@@ -120,7 +129,7 @@ const AuthForm = ({ isLogin }: any) => {
           onClick={onSubmit}
         >
           <p className='font-poppins font-semibold mx-3 self-center text-md'>
-            {isLogin ? "SIGN IN" : "SIGN UP"}
+            {accountExist ? "SIGN IN" : "SIGN UP"}
           </p>
           <img
             alt=''
@@ -129,12 +138,12 @@ const AuthForm = ({ isLogin }: any) => {
           />
         </button>
         <span className='font-poppins opacity-50'>
-          {isLogin ? "Don't have an account?" : "Already have an account?"}
+          {accountExist ? "Don't have an account?" : "Already have an account?"}
           <NavLink
-            to={isLogin ? "/signup" : "/signin"}
+            to={accountExist ? "/signup" : "/signin"}
             className='mx-1 text-orange_form hover:text-hover_orange_form opacity-100'
           >
-            {isLogin ? "Sign up" : "Sign in"}
+            {accountExist ? "Sign up" : "Sign in"}
           </NavLink>
         </span>
       </div>

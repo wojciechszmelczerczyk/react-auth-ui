@@ -8,14 +8,16 @@ const LoginPage: FC = () => {
   // intercept url
   const { pathname } = useLocation();
 
-  const login = pathname === "/signin" ? true : false;
+  // two urls match same component, accountExist flag is used to
+  // differentiate signin and signup forms
+  const accountExist = pathname === "/signin" ? true : false;
 
   return (
     <div className='flex w-screen h-screen overflow-hidden'>
       <div className='flex w-1/2'>
         <div className='bg-pink lg:bg-white w-6/12 '></div>
         <div className='w-6/12 bg-pink'></div>
-        <AuthForm isLogin={login} />
+        <AuthForm accountExist={accountExist} />
       </div>
       <div className='flex w-1/2 bg-pink items-center'>
         <img
