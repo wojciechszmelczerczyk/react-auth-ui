@@ -18,12 +18,12 @@ const HomePage = () => {
       {jwt ? (
         <div className='flex flex-col bg-pink h-screen w-screen items-center overflow-hidden '>
           <div className='flex flex-col items-center'>
-            <p className='text-orange_form h-32 pt-28 text-5xl font-poppins font-semibold'>
+            <p className='text-orange_form h-32 pt-28 text-4xl font-poppins font-semibold'>
               Logo here
             </p>
-            <h1 className='font-poppins text-6xl pt-24'>
+            <h1 className='font-poppins text-5xl pt-24 font-semibold'>
               Hello{" "}
-              <p className='inline-block font-poppins text-6xl font-bold'>
+              <p className='font-poppins inline-block text-5xl font-black'>
                 {user}!
               </p>
             </h1>
@@ -37,7 +37,7 @@ const HomePage = () => {
             </button>
           </div>
           <div className='flex'>
-            <img alt='' src={finances} width={450} />
+            <img alt='' src={finances} width={500} />
           </div>
         </div>
       ) : (
