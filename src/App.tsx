@@ -1,14 +1,18 @@
-import { Navigate, useRoutes } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+import { AuthContext } from "./context/AuthContext";
+import { useState } from "react";
+import Router from "./Router";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  let element = useRoutes([
-    { path: "/", element: <Navigate to='/signin' /> },
-    { path: "/signin", element: <LoginPage /> },
-    { path: "/signup", element: <LoginPage /> },
-  ]);
+  const [user, setUser] = useState<String>();
 
-  return element;
+  return (
+    <AuthContext.Provider value={{ user, setUser } as any}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </AuthContext.Provider>
+  );
 }
 
 export default App;
