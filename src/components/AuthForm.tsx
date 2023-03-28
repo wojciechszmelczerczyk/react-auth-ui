@@ -1,22 +1,22 @@
 import arrowOutlined from "../img/ant-design_swap-left-outlined.svg";
+import { NavLink } from "react-router-dom";
 
 const AuthForm = () => {
   return (
-    <div className='flex flex-col absolute h-4/5 w-4/12 top-20 left-28 z-10 opacity-85 bg-white drop-shadow-2xl rounded-3xl'>
-      {/* <div className='line'> */}
-      <h1 className='mx-16 py-16 text-orange_form h-32 text-4xl drop-shadow-sm font-poppins font-semibold'>
+    <div className='flex flex-col absolute lg:top-10 2xl:top-20 bg-white drop-shadow-2xl rounded-3xl h-4/5 lg:h-5/6 sm:w-2/3 lg:w-1/3 left-28'>
+      <h1 className='mx-16 py-16 text-orange_form h-32 lg:text-3xl text-4xl drop-shadow-sm font-poppins font-semibold'>
         Logo Here
       </h1>
-      {/* </div> */}
-
       <div className='mx-16'>
         <h2 className='font-poppins py-6 opacity-50 drop-shadow-sm'>
           Welcome back !!!
         </h2>
-        <h1 className='font-poppins font-semibold text-6xl'>Sign in</h1>
+        <h1 className='font-poppins font-semibold md:text-3xl lg:text-4xl 2xl:text-6xl'>
+          Sign in
+        </h1>
       </div>
-      <div className='flex flex-col gap-y-10 py-6'>
-        <div className=''>
+      <div className='flex flex-col gap-y-10 py-16'>
+        <div>
           <label className='mx-16 font-poppins'>Email</label>
           <input
             className='mx-16 p-2.5 h-10 w-3/4 bg-orange_input block rounded-md'
@@ -26,9 +26,12 @@ const AuthForm = () => {
         <div className=''>
           <div className='flex'>
             <label className='mx-16 font-poppins'>Password</label>
-            <a href='' className='opacity-50 font-poppins'>
-              Forgot Password ?
-            </a>
+            <NavLink
+              to='/'
+              className='opacity-50 font-poppins justify-self-center'
+            >
+              Forgot password ?
+            </NavLink>
           </div>
           <input
             className='mx-16 p-2.5 h-10 w-3/4 bg-orange_input block rounded-md'
@@ -49,12 +52,12 @@ const AuthForm = () => {
         </button>
         <span className='font-poppins opacity-50'>
           Don't have an account?
-          <a
-            href=''
+          <NavLink
+            to='/'
             className='mx-1 text-orange_form hover:text-hover_orange_form opacity-100'
           >
             Sign up
-          </a>
+          </NavLink>
         </span>
       </div>
     </div>

@@ -7,12 +7,17 @@ const LoginPage: FC = () => {
   return (
     <div className='flex w-screen h-screen overflow-hidden'>
       <div className='flex w-1/2'>
-        <div className='w-6/12 '></div>
+        <div className='bg-pink lg:bg-white w-6/12 '></div>
         <div className='w-6/12 bg-pink'></div>
         <AuthForm />
       </div>
-      <div className='flex w-1/2 bg-pink items-center justify-items-center'>
-        <img src={finances} className='z-10' width={1000} />
+      <div className='flex w-1/2 bg-pink items-center'>
+        <img
+          alt=''
+          src={finances}
+          className='invisible lg:visible'
+          width={1000}
+        />
       </div>
     </div>
   );
