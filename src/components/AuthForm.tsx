@@ -13,8 +13,8 @@ const AuthForm = ({ accountExist }: any) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // if jwt exists in local storage redirect to user homepage
-    if (localStorage.getItem("jwt")) {
+    // if jwt and email both exists in local storage redirect to user homepage
+    if (localStorage.getItem("jwt") && localStorage.getItem("email")) {
       const email = localStorage.getItem("email");
       navigate(`/homepage/${email}`);
     }
