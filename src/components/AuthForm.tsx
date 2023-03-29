@@ -70,19 +70,19 @@ const AuthForm = ({ accountExist }: any) => {
   };
 
   return (
-    <div className='flex flex-col absolute lg:top-10 2xl:top-20 bg-white drop-shadow-2xl rounded-3xl h-4/5 lg:h-5/6 sm:w-2/3 md:w-3/4 lg:w-1/3 left-28'>
-      <h1 className='mx-16 py-16 text-orange_form h-32 lg:text-3xl text-4xl drop-shadow-sm font-poppins font-semibold'>
+    <div className='flex flex-col absolute top-20 bg-white drop-shadow-xl rounded-3xl h-3/4 lg:h-3/4 2xl:h-3/4 sm:w-2/3 md:w-3/4 lg:w-1/3 3xl:w-1/4 left-28'>
+      <h1 className='logoHeader mx-16 py-16 drop-shadow-2xl text-orange_form h-32 lg:text-3xl text-4xl font-poppins font-semibold text-center lg:text-start'>
         Logo Here
       </h1>
       <div className='mx-16'>
-        <h2 className='font-poppins py-6 opacity-50 drop-shadow-sm'>
+        <h2 className='welcomeHeader font-poppins py-6 opacity-50 drop-shadow-sm tracking-wide	'>
           Welcome back !!!
         </h2>
-        <h1 className='font-poppins font-semibold md:text-3xl lg:text-4xl 2xl:text-6xl'>
+        <h1 className='font-poppins font-semibold text-3xl lg:text-4xl 2xl:text-6xl'>
           {accountExist ? "Sign in" : "Sign up"}
         </h1>
       </div>
-      <div className='flex flex-col gap-y-10 pt-10'>
+      <div className='flex flex-col gap-y-6 pt-8'>
         <div className='flex flex-col'>
           <label className='mx-16 py-1 font-poppins'>Email</label>
           <input
@@ -91,19 +91,24 @@ const AuthForm = ({ accountExist }: any) => {
             onInput={() => setEmailError("")}
             onChange={(e) => setEmail(e.target.value)}
           />
-          {emailError ? (
-            <div className='mx-16 py-1 w-3/4 bg-orange_form rounded-md'>
-              <p className='mx-2 text-white font-poppins'>{emailError}</p>
-            </div>
-          ) : (
-            ""
-          )}
+          <div className='pt-4'>
+            {emailError ? (
+              <div className='fixed mx-16 -mt-2 py-1 w-3/4 bg-orange_form rounded-md'>
+                <p className='mx-2 text-white font-poppins'>{emailError}</p>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
         <div className='flex flex-col'>
           <div className='flex'>
-            <label className='mx-16 py-1 font-poppins'>Password</label>
-            <NavLink to='/' className='opacity-50 font-poppins'>
-              Forgot password ?
+            <label className='mx-16 py-1 w-1/2 font-poppins'>Password</label>
+            <NavLink
+              to='/'
+              className='opacity-50 font-poppins w-1/2 self-center'
+            >
+              Forgot Password ?
             </NavLink>
           </div>
           <input
@@ -112,36 +117,46 @@ const AuthForm = ({ accountExist }: any) => {
             onInput={() => setPasswordError("")}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {passwordError ? (
-            <div className='mx-16 py-1 w-3/4 bg-orange_form rounded-md'>
-              <p className='mx-2 text-white font-poppins'>{passwordError}</p>
-            </div>
-          ) : (
-            ""
-          )}
+          <div className='pt-4'>
+            {passwordError ? (
+              <div className='fixed mx-16 -mt-2 py-1 w-3/4 bg-orange_form rounded-md'>
+                <p className='mx-2 text-white font-poppins'>{passwordError}</p>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </div>
-      <div className='flex flex-col gap-y-10 grow items-center justify-center'>
+      <div className='flex flex-col gap-y-10 grow items-center justify-center -mt-12'>
         <button
           type='submit'
           value='submit'
           className='flex text-white justify-center bg-orange_form hover:bg-hover_orange_form rounded-3xl w-36 h-12 shadow-xl'
           onClick={onSubmit}
         >
-          <p className='font-poppins font-semibold mx-3 self-center text-md'>
+          <p className='buttonText font-poppins font-semibold mx-3 self-center text-md'>
             {accountExist ? "SIGN IN" : "SIGN UP"}
           </p>
           <img
             alt=''
             src={arrowOutlined}
-            className='font-poppins font-semibold self-center'
+            className='buttonArrowIcon font-poppins font-semibold self-center'
           />
         </button>
-        <span className='font-poppins opacity-50'>
-          {accountExist ? "Don't have an account?" : "Already have an account?"}
+        <span className='font-poppins'>
+          {accountExist ? (
+            <p className='inline-block opacity-25 tracking-wide	'>
+              Don't have an account?
+            </p>
+          ) : (
+            <p className='inline-block opacity-25 tracking-wide	'>
+              Already have an account?
+            </p>
+          )}
           <NavLink
             to={accountExist ? "/signup" : "/signin"}
-            className='mx-1 text-orange_form hover:text-hover_orange_form opacity-100'
+            className='mx-1 text-orange_form hover:text-hover_orange_form'
           >
             {accountExist ? "Sign up" : "Sign in"}
           </NavLink>

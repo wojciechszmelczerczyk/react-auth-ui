@@ -19,7 +19,7 @@ const HomePage = () => {
         <div className='flex flex-col bg-pink h-screen w-screen items-center overflow-hidden '>
           <div className='flex flex-col items-center'>
             <p className='text-orange_form h-32 pt-28 text-4xl font-poppins font-semibold'>
-              Logo here
+              Logo Here
             </p>
             <h1 className='font-poppins text-5xl pt-24 font-semibold'>
               Hello{" "}
@@ -32,7 +32,7 @@ const HomePage = () => {
               onClick={logout}
             >
               <p className='font-poppins font-semibold mx-3 self-center text-md'>
-                Sign out
+                SIGN OUT
               </p>
             </button>
           </div>

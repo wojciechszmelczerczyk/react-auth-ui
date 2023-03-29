@@ -19,13 +19,8 @@ const LoginPage: FC = () => {
         <div className='w-6/12 bg-pink'></div>
         <AuthForm accountExist={accountExist} />
       </div>
-      <div className='flex w-1/2 bg-pink items-center'>
-        <img
-          alt=''
-          src={finances}
-          className='invisible lg:visible'
-          width={1000}
-        />
+      <div className='flex  w-1/2 bg-pink'>
+        <img alt='' src={finances} className='invisible lg:visible' />
       </div>
     </div>
   );
