@@ -14,16 +14,16 @@ const LoginPage: FC = () => {
 
   return (
     <div className='flex w-screen h-screen overflow-hidden'>
-      <div className='flex w-1/2'>
-        <div className='bg-pink lg:bg-white w-6/12 '></div>
-        <div className='w-6/12 bg-pink'></div>
+      <div className='flex w-1/3'>
+        <div className='bg-pink lg:bg-white w-9/12 '></div>
+        <div className='w-3/12 bg-pink'></div>
         <AuthForm accountExist={accountExist} />
       </div>
-      <div className='flex w-1/2 bg-pink items-center justify-items-center'>
+      <div className='flex w-2/3 grow bg-pink items-center justify-center'>
         <img
           alt=''
           src={finances}
-          className='invisible lg:visible right-24'
+          className='invisible lg:visible'
           width={1000}
         />
       </div>
