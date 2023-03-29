@@ -18,17 +18,17 @@ const HomePage = () => {
       {jwt ? (
         <div className='flex flex-col bg-pink h-screen w-screen items-center overflow-hidden '>
           <div className='flex flex-col items-center'>
-            <p className='text-orange_form h-32 pt-28 text-4xl font-poppins font-semibold'>
+            <p className='text-orange_form sm:h-32 pt-28 mobile:text-3xl sm:text-4xl font-poppins font-semibold'>
               Logo Here
             </p>
-            <h1 className='font-poppins text-5xl pt-24 font-semibold'>
+            <h1 className='font-poppins mobile:text-2xl md:text-5xl pt-24 font-semibold'>
               Hello{" "}
-              <p className='font-poppins inline-block text-5xl font-black'>
+              <p className='font-poppins inline-block mobile:text-2xl md:text-5xl font-black'>
                 {user}!
               </p>
             </h1>
             <button
-              className='flex text-white justify-center bg-orange_form hover:bg-hover_orange_form rounded-3xl w-36 h-12 my-10'
+              className='flex text-white justify-center bg-orange_form hover:bg-hover_orange_form rounded-3xl mobile:w-32 mobile:h-10 sm:w-36 sm:h-12 my-10'
               onClick={logout}
             >
               <p className='font-poppins font-semibold mx-3 self-center text-md'>

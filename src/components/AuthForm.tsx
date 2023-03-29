@@ -70,7 +70,7 @@ const AuthForm = ({ accountExist }: any) => {
   };
 
   return (
-    <div className='flex flex-col absolute top-20 bg-white drop-shadow-xl rounded-3xl h-5/6 sm:w-2/3 md:w-3/4 lg:w-1/3 3xl:w-1/4 left-28'>
+    <div className='flex flex-col absolute sm:top-20 bg-white drop-shadow-xl mobile:rounded-none sm:rounded-3xl mobile:h-screen sm:h-5/6 mobile:w-screen sm:w-2/3 md:w-3/4 lg:w-1/3 3xl:w-1/4 sm:left-28'>
       <h1 className='logoHeader mx-16 py-16 drop-shadow-2xl text-orange_form h-32 text-3xl lg:text-4xl font-poppins font-semibold text-center lg:text-start'>
         Logo Here
       </h1>
@@ -110,7 +110,7 @@ const AuthForm = ({ accountExist }: any) => {
             </label>
             <NavLink
               to='/'
-              className='opacity-50 font-poppins w-1/2 self-center text-base 3xl:text-lg'
+              className='opacity-50 font-poppins w-1/2 self-center mobile:text-xs sm:text-base 3xl:text-lg'
             >
               Forgot Password ?
             </NavLink>
@@ -132,7 +132,7 @@ const AuthForm = ({ accountExist }: any) => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-y-10 grow items-center justify-center -mt-5'>
+      <div className='flex flex-col gap-y-10 grow items-center justify-center mobile:mt-6 sm:-mt-5'>
         <button
           type='submit'
           value='submit'
