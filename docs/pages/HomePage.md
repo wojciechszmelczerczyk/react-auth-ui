@@ -8,7 +8,7 @@ Component contains arbitrary "Hello" template with current user email.
 
 <b>URL Paramater</b>: `user=[string]` where `user` is email.
 
-<b>Props</b>: `NO`
+<b>Props</b>: `None`
 
 <b>Authorized</b>: `YES`
 
