@@ -161,6 +161,13 @@ const AuthForm = ({ accountExist }: any) => {
           <NavLink
             to={accountExist ? "/signup" : "/signin"}
             className='mx-1 text-orange_form hover:text-hover_orange_form'
+            onClick={() => {
+              document
+                .querySelectorAll("input")
+                .forEach((input: any) => (input.value = ""));
+              setEmailError("");
+              setPasswordError("");
+            }}
           >
             {accountExist ? "Sign up" : "Sign in"}
           </NavLink>
