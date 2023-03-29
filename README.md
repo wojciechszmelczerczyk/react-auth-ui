@@ -17,10 +17,10 @@ Simple UI for user authentication.
 
 ## Client routing
 
-|                 Pages                  |       Endpoint       |
-| :------------------------------------: | :------------------: |
-| [LoginPage](./src/pages/LoginPage.tsx) | `/signup`, `/signin` |
-|  [HomePage](./src/pages/HomePage.tsx)  |   `homepage/:user`   |
+|              Pages               |       Endpoint       |
+| :------------------------------: | :------------------: |
+| [LoginPage](./docs/pages/LoginPage.md) | `/signup`, `/signin` |
+|  [HomePage](./docs/pages/HomePage.md)  |   `homepage/:user`   |
 
 ## To run
 
